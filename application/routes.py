@@ -1,31 +1,27 @@
 from . import app
 from . import models
-from flask import render_template , request , Response
-
-
-@app.route("/")
+from flask import render_template , request , Response , redirect , url_for
+@app.route('/')
+def Home() : 
+    return redirect("/menu-selection")
+@app.route("/menu-selection")
 def main() : 
-    return "Main"
+    try: 
+        return render_template("menu.html")
+    except Exception as e : 
+        return Response(e , status=404)
 
-
-@app.route("/register")
+@app.route("/confirm")
 def regiter() : 
-    return "register"
+    try: 
+        return render_template("confirm.html")
+    except Exception as e : 
+        return Response(e , status=404)
 
 
-
-@app.route("/login")
+@app.route("/done")
 def login() : 
-    return "log-in"
-
-
-
-
-@app.route("/login")
-def login() : 
-    return "log-in"
-
-
-
-
-
+    try: 
+        return redirect("/menu-selection")
+    except Exception as e : 
+        return Response(e , status=404)
