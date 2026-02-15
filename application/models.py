@@ -6,6 +6,8 @@ class Product (db.Model) :
     _name = db.Column(db.String , nullable = False)
     _stock = db.Column(db.String , nullable = False)
     _price = db.Column(db.Integer, nullable = False)
+    _description = db.Column(db.String , nullable = False)
+    _photo = db.Column(db.String , nullable = False)
     @property
     def name() : 
         return Product._name
