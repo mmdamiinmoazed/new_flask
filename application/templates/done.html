@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>کافه | انجام شد</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='cafe_flow.css')}}" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="brand">
+        <div class="title">نتیجه</div>
+        <div class="subtitle">قدم ۳: فرآیند با موفقیت انجام شد.</div>
+      </div>
+
+      <div class="stepper" aria-label="steps">
+        <div class="step done"><div class="dot"></div><span>menu-selection</span></div>
+        <div class="step done"><div class="dot"></div><span>confirm</span></div>
+        <div class="step active"><div class="dot"></div><span>done</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="center">
+        <div class="success-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <h1 class="big">سفارش ثبت شد ✅</h1>
+        <p class="muted">
+          اگر دوست داری، مرحلهٔ بعدی می‌تونیم: صفحهٔ جزئیات محصول، پرداخت، یا پروفایل کاربر رو اضافه کنیم.
+        </p>
+
+        <div style="margin-top:18px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+          <a class="btn btn-secondary" href="menu-selection.html">شروع دوباره</a>
+          <a class="btn btn-primary" href="menu-selection.html">بازگشت به منو</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

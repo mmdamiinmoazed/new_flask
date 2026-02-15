@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>کافه | انتخاب منو</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='cafe_flow.css')}}" /></head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="brand">
+        <div class="title">کافه شما</div>
+        <div class="subtitle">قدم ۱: محصول‌ها را انتخاب کنید، سپس به صفحهٔ تأیید بروید.</div>
+      </div>
+
+      <div class="stepper" aria-label="steps">
+        <div class="step active"><div class="dot"></div><span>menu-selection</span></div>
+        <div class="step"><div class="dot"></div><span>confirm</span></div>
+        <div class="step"><div class="dot"></div><span>done</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <form class="section" action="confirm.html" method="get">
+        <div class="grid">
+
+          <!-- Item 1 -->
+          <div class="menu-item">
+            <div class="thumb" aria-hidden="true"></div>
+            <div class="item-body">
+              <div class="item-title">
+                <h3>کاپوچینو</h3>
+                <div class="price">۹۵٫۰۰۰</div>
+              </div>
+              <p class="desc">قهوه اسپرسو + شیر بخار داده شده با فوم سبک.</p>
+              <div class="select-row">
+                <label class="checkbox">
+                  <input type="checkbox" name="items" value="کاپوچینو|95000">
+                  انتخاب
+                </label>
+                <span class="badge">Hot</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="menu-item">
+            <div class="thumb" aria-hidden="true"></div>
+            <div class="item-body">
+              <div class="item-title">
+                <h3>آیس لاته</h3>
+                <div class="price">۱۰۵٫۰۰۰</div>
+              </div>
+              <p class="desc">لاته سرد با یخ و طعم متعادل و خامه‌ای.</p>
+              <div class="select-row">
+                <label class="checkbox">
+                  <input type="checkbox" name="items" value="آیس لاته|105000">
+                  انتخاب
+                </label>
+                <span class="badge">Iced</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="menu-item">
+            <div class="thumb" aria-hidden="true"></div>
+            <div class="item-body">
+              <div class="item-title">
+                <h3>چیزکیک</h3>
+                <div class="price">۱۲۰٫۰۰۰</div>
+              </div>
+              <p class="desc">چیزکیک کلاسیک با بافت نرم و شیرینی ملایم.</p>
+              <div class="select-row">
+                <label class="checkbox">
+                  <input type="checkbox" name="items" value="چیزکیک|120000">
+                  انتخاب
+                </label>
+                <span class="badge">Dessert</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="menu-item">
+            <div class="thumb" aria-hidden="true"></div>
+            <div class="item-body">
+              <div class="item-title">
+                <h3>ساندویچ مرغ</h3>
+                <div class="price">۱۶۵٫۰۰۰</div>
+              </div>
+              <p class="desc">مرغ گریل + سبزیجات تازه + سس مخصوص.</p>
+              <div class="select-row">
+                <label class="checkbox">
+                  <input type="checkbox" name="items" value="ساندویچ مرغ|165000">
+                  انتخاب
+                </label>
+                <span class="badge">Food</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="actions">
+          <div class="hint">
+            با زدن دکمهٔ «ادامه»، موارد انتخاب‌شده به صفحهٔ confirm منتقل می‌شوند.
+          </div>
+          <button class="btn btn-primary" type="submit">ادامه → confirm</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

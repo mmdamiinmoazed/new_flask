@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>کافه | تایید سفارش</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='cafe_flow.css')}}" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="brand">
+        <div class="title">تأیید سفارش</div>
+        <div class="subtitle">قدم ۲: موارد انتخاب‌شده را بررسی کنید و نهایی کنید.</div>
+      </div>
+
+      <div class="stepper" aria-label="steps">
+        <div class="step done"><div class="dot"></div><span>menu-selection</span></div>
+        <div class="step active"><div class="dot"></div><span>confirm</span></div>
+        <div class="step"><div class="dot"></div><span>done</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="section">
+        <div class="badge">نمایش انتخاب‌ها با CSS-only (بدون JS)</div>
+
+        <!--
+          این صفحه بدون JS نمی‌تواند query string را بخواند و لیست را واقعا “دینامیک” کند.
+          پس دو حالت داریم:
+          1) حالت نمایشی/استاتیک (پایین)
+          2) وقتی JS اضافه کردی، همین UI آماده است تا data را تزریق کنی.
+        -->
+
+        <div class="list" style="margin-top:12px;">
+          <div class="line">
+            <div>
+              <strong>آیتم‌های انتخاب‌شده</strong>
+              <div class="small">در نسخه‌ی CSS-only، این بخش نمایشی است.</div>
+            </div>
+            <a class="btn btn-secondary" href="menu-selection.html">↩ برگشت</a>
+          </div>
+
+          <div class="line">
+            <div>
+              <strong>نمونه: کاپوچینو</strong>
+              <div class="small">۹۵٫۰۰۰ تومان</div>
+            </div>
+            <span class="badge">1x</span>
+          </div>
+
+          <div class="line">
+            <div>
+              <strong>نمونه: چیزکیک</strong>
+              <div class="small">۱۲۰٫۰۰۰ تومان</div>
+            </div>
+            <span class="badge">1x</span>
+          </div>
+
+          <div class="total">
+            <div>
+              <strong>جمع کل</strong>
+              <div class="small">نمایشی (وقتی JS اضافه شود، واقعی محاسبه می‌شود)</div>
+            </div>
+            <div class="amount">۲۱۵٫۰۰۰</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <div class="hint">
+          اگر خواستی در قدم بعدی، همین صفحه را با JS خیلی سبک کاملاً داینامیک می‌کنم.
+        </div>
+        <a class="btn btn-primary" href="done.html">نهایی کردن → done</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

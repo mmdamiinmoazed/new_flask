@@ -7,5 +7,12 @@ final_path = os.path.join( current_path , "app.db" )
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///" + final_path
 db = SQLAlchemy(app)
+
+
+
+
+
 from . import models
 from . import routes
+
+
