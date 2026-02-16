@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>کافه | ویرایش محصول</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='cafe_flow.css') }}">
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="brand">
+      <div class="title">ویرایش محصول</div>
+      <div class="subtitle">اطلاعات محصول را به‌روزرسانی کنید.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <form class="section" method="POST" action="#">
+      
+      <div class="grid">
+
+        <div class="menu-item" style="grid-column: span 12;">
+          <div class="item-body">
+
+            <label>انتخاب محصول</label>
+            <select name="product" class="input">
+              <option>کاپوچینو</option>
+              <option>آیس لاته</option>
+              <option>چیزکیک</option>
+            </select>
+
+            <label style="margin-top:12px;">نام جدید</label>
+            <input type="text" name="new_name" class="input">
+
+            <label style="margin-top:12px;">قیمت جدید</label>
+            <input type="number" name="new_price" class="input">
+
+            <label style="margin-top:12px;">توضیحات جدید</label>
+            <textarea name="new_description" rows="3" class="input"></textarea>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="actions">
+        <a href="/" class="btn btn-secondary">↩ بازگشت</a>
+        <button type="submit" class="btn btn-primary">ذخیره تغییرات</button>
+      </div>
+
+    </form>
+  </div>
+
+</div>
+</body>
+</html>

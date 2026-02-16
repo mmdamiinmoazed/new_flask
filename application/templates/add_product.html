@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>کافه | افزودن محصول</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='cafe_flow.css') }}">
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="brand">
+      <div class="title">افزودن محصول جدید</div>
+      <div class="subtitle">یک آیتم جدید به منوی کافه اضافه کنید.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <form class="section" method="POST" action="/changed">
+      
+      <div class="grid">
+
+        <div class="menu-item" style="grid-column: span 12;">
+          <div class="item-body">
+
+            <label>نام محصول</label>
+            <input type="text" name="name" required class="input">
+
+            <label style="margin-top:12px;">قیمت</label>
+            <input type="number" name="price" required class="input">
+
+            <label style="margin-top:12px;">دسته‌بندی</label>
+            <select name="category" class="input">
+              <option>drink</option>
+              <option>dessert</option>
+              <option>food</option>
+            </select>
+
+            <label style="margin-top:12px;">توضیحات</label>
+            <textarea name="description" rows="3" class="input"></textarea>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="actions">
+        <a href="/" class="btn btn-secondary">↩ بازگشت</a>
+        <button type="submit" class="btn btn-primary">ثبت محصول</button>
+      </div>
+
+    </form>
+  </div>
+
+</div>
+</body>
+</html>

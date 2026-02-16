@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>کافه | حذف محصول</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='cafe_flow.css') }}">
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="brand">
+      <div class="title">حذف محصول</div>
+      <div class="subtitle">محصول موردنظر را از منو حذف کنید.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <form class="section" method="GET" action="/changed">
+      {%if products%}
+        {%for product in products %}
+          <div class="list">
+            <div class="line">
+              <div>
+                <strong>{{product._name}}</strong>
+                <div class="small">{{ product._price }}</div>
+              </div>
+              <input type="radio" name="product" value="{{product._id}}">
+            </div>
+        {%endfor%}
+
+      </div>
+      {%else%}
+          No product available
+      {%endif%}
+      <div class="actions">
+        <a href="/" class="btn btn-secondary">↩ بازگشت</a>
+        <button type="submit" class="btn btn-primary">حذف محصول</button>
+      </div>
+
+    </form>
+  </div>
+
+</div>
+</body>
+</html>
