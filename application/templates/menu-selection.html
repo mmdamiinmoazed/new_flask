@@ -4,7 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>کافه | انتخاب منو</title>
-  <link rel="stylesheet" href="{{url_for('static',filename='cafe_flow.css')}}" /></head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='cafe_flow.css') }}">
+</head>
+
 <body>
   <div class="container">
     <div class="header">
@@ -22,28 +24,43 @@
 
     <div class="card">
       <form class="section" action="/confirm" method="get">
-        <div class="grid">
 
-          <!-- Item -->
-          <div class="menu-item">
-            <div class="thumb" aria-hidden="true"></div>
-            <div class="item-body">
-              <div class="item-title">
-                <h3>{{product._name}}</h3>
-                <div class="price">{{product._price}}</div>
+        {% if products %}
+          <div class="grid">
+            {% for product in products %}
+              <div class="menu-item">
+                <div class="thumb" aria-hidden="true"></div>
+
+                <div class="item-body">
+                  <div class="item-title">
+                    <h3>{{ product._name }}</h3>
+                    <div class="price">{{ product._price }}</div>
+                  </div>
+
+                  {# اگر خواستی توضیح رو فعال کن #}
+                  {# <p class="desc">{{ product._description }}</p> #}
+
+                  <div class="select-row">
+                    <label class="checkbox">
+                      <input
+                        type="checkbox"
+                        name="items"
+                        value="{{ product._name }}|{{ product._price }}"
+                      >
+                      انتخاب
+                    </label>
+
+                    <span class="badge">{{ product._category or "item" }}</span>
+                  </div>
+                </div>
               </div>
-              <p class="desc">{{product._description}}</p>
-              <div class="select-row">
-                <label class="checkbox">
-                  <input type="checkbox" name="items" value="کاپوچینو|95000">
-                  انتخاب
-                </label>
-                <span class="badge">Hot</span>
-              </div>
-            </div>
+            {% endfor %}
           </div>
-
-        </div>
+        {% else %}
+          <div class="section">
+            No product available
+          </div>
+        {% endif %}
 
         <div class="actions">
           <div class="hint">
@@ -51,6 +68,7 @@
           </div>
           <button class="btn btn-primary" type="submit">ادامه → confirm</button>
         </div>
+
       </form>
     </div>
   </div>
