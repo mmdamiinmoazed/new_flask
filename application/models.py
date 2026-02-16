@@ -1,6 +1,11 @@
 from . import db , app
+from sqlalchemy import Column
+
+
+
 
 class Product (db.Model) : 
+    
     __tablename__ = "product"
     _id = db.Column(db.Integer , autoincrement=True , primary_key = True)
     _name = db.Column(db.String , nullable = False)
@@ -8,15 +13,7 @@ class Product (db.Model) :
     _price = db.Column(db.Integer, nullable = False)
     _description = db.Column(db.String , nullable = False)
     _photo = db.Column(db.String , nullable = False)
-    @property
-    def name() : 
-        return Product._name
-    @property
-    def stock() : 
-        return Product._stock
-    @property
-    def price() : 
-        return Product._price
+    _category = db.Column(db.Enum("dessert" , "drink" , "food"))
 with app.app_context() : 
     db.create_all()
-    print("database and columns of it got created")
+    
