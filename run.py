@@ -9,4 +9,3 @@ try :
         raise RuntimeError("got an error in application when it wanted to run")
 except Exception as e  : 
     print(f"Error detail : {e}")
-    
